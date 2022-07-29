@@ -1,0 +1,127 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002693978c7f0 .scope module, "MUX_tb" "MUX_tb" 2 2;
+ .timescale 0 0;
+v00000269397d1d30_0 .net "d", 0 0, L_00000269397d3880;  1 drivers
+v00000269397d22d0_0 .var "s0", 0 0;
+v00000269397d2370_0 .var "s1", 0 0;
+v00000269397d20f0_0 .var "y0", 0 0;
+v00000269397d1dd0_0 .var "y1", 0 0;
+v00000269397d2190_0 .var "y2", 0 0;
+v00000269397d2550_0 .var "y3", 0 0;
+S_000002693978c980 .scope module, "add" "MUX" 2 5, 3 1 0, S_000002693978c7f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "s1";
+    .port_info 1 /INPUT 1 "s0";
+    .port_info 2 /INPUT 1 "y0";
+    .port_info 3 /INPUT 1 "y1";
+    .port_info 4 /INPUT 1 "y2";
+    .port_info 5 /INPUT 1 "y3";
+    .port_info 6 /OUTPUT 1 "d";
+L_00000269397c65f0 .functor AND 1, v00000269397d20f0_0, L_00000269397d25f0, C4<1>, C4<1>;
+L_00000269397c6660 .functor AND 1, L_00000269397c65f0, L_00000269397d2730, C4<1>, C4<1>;
+L_00000269397c63c0 .functor AND 1, v00000269397d1dd0_0, L_00000269397d1ab0, C4<1>, C4<1>;
+L_00000269397c6430 .functor AND 1, L_00000269397c63c0, v00000269397d22d0_0, C4<1>, C4<1>;
+L_00000269397c64a0 .functor AND 1, v00000269397d2190_0, v00000269397d2370_0, C4<1>, C4<1>;
+L_00000269397c6510 .functor AND 1, L_00000269397c64a0, L_00000269397d1bf0, C4<1>, C4<1>;
+L_00000269397c62e0 .functor AND 1, v00000269397d2550_0, v00000269397d2370_0, C4<1>, C4<1>;
+L_00000269397c6970 .functor AND 1, L_00000269397c62e0, v00000269397d22d0_0, C4<1>, C4<1>;
+v000002693978cb90_0 .net *"_ivl_1", 0 0, L_00000269397d25f0;  1 drivers
+v00000269397a3740_0 .net *"_ivl_10", 0 0, L_00000269397c63c0;  1 drivers
+v00000269397c6a30_0 .net *"_ivl_12", 0 0, L_00000269397c6430;  1 drivers
+v00000269397c6ad0_0 .net *"_ivl_14", 0 0, L_00000269397d1fb0;  1 drivers
+v00000269397c6b70_0 .net *"_ivl_16", 0 0, L_00000269397c64a0;  1 drivers
+v00000269397c6c10_0 .net *"_ivl_19", 0 0, L_00000269397d1bf0;  1 drivers
+v00000269397c6cb0_0 .net *"_ivl_2", 0 0, L_00000269397c65f0;  1 drivers
+v00000269397c6d50_0 .net *"_ivl_20", 0 0, L_00000269397c6510;  1 drivers
+v00000269397c6df0_0 .net *"_ivl_22", 0 0, L_00000269397d1b50;  1 drivers
+v00000269397d1e70_0 .net *"_ivl_24", 0 0, L_00000269397c62e0;  1 drivers
+v00000269397d2230_0 .net *"_ivl_26", 0 0, L_00000269397c6970;  1 drivers
+v00000269397d27d0_0 .net *"_ivl_5", 0 0, L_00000269397d2730;  1 drivers
+v00000269397d18d0_0 .net *"_ivl_6", 0 0, L_00000269397c6660;  1 drivers
+v00000269397d1c90_0 .net *"_ivl_9", 0 0, L_00000269397d1ab0;  1 drivers
+v00000269397d1970_0 .net "d", 0 0, L_00000269397d3880;  alias, 1 drivers
+v00000269397d2690_0 .net "s0", 0 0, v00000269397d22d0_0;  1 drivers
+v00000269397d2410_0 .net "s1", 0 0, v00000269397d2370_0;  1 drivers
+v00000269397d24b0_0 .net "y0", 0 0, v00000269397d20f0_0;  1 drivers
+v00000269397d1a10_0 .net "y1", 0 0, v00000269397d1dd0_0;  1 drivers
+v00000269397d1f10_0 .net "y2", 0 0, v00000269397d2190_0;  1 drivers
+v00000269397d2050_0 .net "y3", 0 0, v00000269397d2550_0;  1 drivers
+L_00000269397d25f0 .reduce/nor v00000269397d2370_0;
+L_00000269397d2730 .reduce/nor v00000269397d22d0_0;
+L_00000269397d1ab0 .reduce/nor v00000269397d2370_0;
+L_00000269397d1fb0 .arith/sum 1, L_00000269397c6660, L_00000269397c6430;
+L_00000269397d1bf0 .reduce/nor v00000269397d22d0_0;
+L_00000269397d1b50 .arith/sum 1, L_00000269397d1fb0, L_00000269397c6510;
+L_00000269397d3880 .arith/sum 1, L_00000269397d1b50, L_00000269397c6970;
+    .scope S_000002693978c7f0;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "MUX.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002693978c7f0 {0 0 0};
+    %vpi_call 2 10 "$monitor", "s1 = %b s0 = %b y0 = %b y1 = %b y2 = %b y3 = %b d = %b", v00000269397d2370_0, v00000269397d22d0_0, v00000269397d20f0_0, v00000269397d1dd0_0, v00000269397d2190_0, v00000269397d2550_0, v00000269397d1d30_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000269397d20f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d1dd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d2190_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d2550_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d2370_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d22d0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d20f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000269397d1dd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d2190_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d2550_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d2370_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000269397d22d0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d20f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d1dd0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000269397d2190_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d2550_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000269397d2370_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d22d0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d20f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d1dd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000269397d2190_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000269397d2550_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000269397d2370_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000269397d22d0_0, 0, 1;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "MUX_tb.v";
+    "./MUX.v";

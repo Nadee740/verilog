@@ -1,0 +1,81 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000196612cbe20 .scope module, "Gates_tb" "Gates_tb" 2 1;
+ .timescale 0 0;
+v00000196612e3580_0 .var "t_a", 0 0;
+v00000196612e3620_0 .net "t_and", 0 0, L_00000196612cddb0;  1 drivers
+v0000019661311bb0_0 .var "t_b", 0 0;
+v00000196613111b0_0 .net "t_nand", 0 0, L_00000196613114d0;  1 drivers
+v0000019661311a70_0 .net "t_nor", 0 0, L_0000019661311930;  1 drivers
+v00000196613112f0_0 .net "t_not", 0 0, L_0000019661310e90;  1 drivers
+v0000019661311890_0 .net "t_or", 0 0, L_00000196612e38e0;  1 drivers
+v0000019661311390_0 .net "t_xnor", 0 0, L_0000019661311430;  1 drivers
+v0000019661311070_0 .net "t_xor", 0 0, L_0000019661314af0;  1 drivers
+S_0000019661306100 .scope module, "my_gate" "Gates" 2 4, 3 1 0, S_00000196612cbe20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y_and";
+    .port_info 3 /OUTPUT 1 "y_or";
+    .port_info 4 /OUTPUT 1 "y_not";
+    .port_info 5 /OUTPUT 1 "y_nor";
+    .port_info 6 /OUTPUT 1 "y_nand";
+    .port_info 7 /OUTPUT 1 "y_xor";
+    .port_info 8 /OUTPUT 1 "y_xnor";
+L_00000196612cddb0 .functor AND 1, v00000196612e3580_0, v0000019661311bb0_0, C4<1>, C4<1>;
+L_00000196612e38e0 .functor OR 1, v00000196612e3580_0, v0000019661311bb0_0, C4<0>, C4<0>;
+L_0000019661314af0 .functor XOR 1, v00000196612e3580_0, v0000019661311bb0_0, C4<0>, C4<0>;
+v00000196612e3be0_0 .net "a", 0 0, v00000196612e3580_0;  1 drivers
+v0000019661306290_0 .net "b", 0 0, v0000019661311bb0_0;  1 drivers
+v0000019661306330_0 .net "y_and", 0 0, L_00000196612cddb0;  alias, 1 drivers
+v00000196613063d0_0 .net "y_nand", 0 0, L_00000196613114d0;  alias, 1 drivers
+v0000019661306470_0 .net "y_nor", 0 0, L_0000019661311930;  alias, 1 drivers
+v00000196612e3300_0 .net "y_not", 0 0, L_0000019661310e90;  alias, 1 drivers
+v00000196612e33a0_0 .net "y_or", 0 0, L_00000196612e38e0;  alias, 1 drivers
+v00000196612e3440_0 .net "y_xnor", 0 0, L_0000019661311430;  alias, 1 drivers
+v00000196612e34e0_0 .net "y_xor", 0 0, L_0000019661314af0;  alias, 1 drivers
+L_00000196613114d0 .reduce/nor L_00000196612cddb0;
+L_0000019661311930 .reduce/nor L_00000196612e38e0;
+L_0000019661310e90 .reduce/nor v00000196612e3580_0;
+L_0000019661311430 .reduce/nor L_0000019661314af0;
+    .scope S_00000196612cbe20;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "Gates.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000196612cbe20 {0 0 0};
+    %vpi_call 2 12 "$display", "a\011b\011and\011or\011a not\011nand\011nor\011xor\011xnor" {0 0 0};
+    %vpi_call 2 13 "$monitor", "%b\011%b\011%b\011%b\011%b\011%b\011%b\011%b\011%b", v00000196612e3580_0, v0000019661311bb0_0, v00000196612e3620_0, v0000019661311890_0, v00000196613112f0_0, v00000196613111b0_0, v0000019661311a70_0, v0000019661311070_0, v0000019661311390_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000196612e3580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019661311bb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000196612e3580_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019661311bb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000196612e3580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019661311bb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000196612e3580_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019661311bb0_0, 0, 1;
+    %delay 5, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Gates_tb.v";
+    "Gates.v";
